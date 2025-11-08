@@ -1,7 +1,28 @@
 ## 🚀 Description
 
-Briefly describe the features you’ve implemented in this PR.  
-Mention any key implementation details, edge cases, or design decisions.
+Added task creation using a floating + button
+
+Cancel task if not needed while  creating
+
+Toggle tasks between done and pending by tapping
+
+Edit tasks via a modal triggered by long-press
+
+Delete tasks via long-press option
+
+Tasks are sorted with pending tasks first
+
+Local persistence using AsyncStorage to save tasks across app restarts
+
+Custom fonts applied for app title and task text
+
+Edge cases handled:
+
+Prevents adding empty tasks
+
+Canceling task creation clears input and hides keyboard
+
+Editing a task modal ensures empty edits are not saved
 
 > Example:  
 > - Implemented task creation form  
@@ -15,8 +36,15 @@ Mention any key implementation details, edge cases, or design decisions.
 Please take a moment to explain:
 
 - Why you structured the solution the way you did
+All hooks (useState, useEffect) are declared at the top level to comply with React native rules.
+
 - What you were optimizing for (e.g. performance, readability, UX)
+Floating buttons provide quick add/cancel actions; modal for editing prevents accidental edits.
+
 - How this benefits the end user
+Intuitive task management workflow
+Persistent tasks allow users to close and reopen the app without losing data
+Smooth interaction for adding, editing, and deleting tasks
 
 This helps us understand how you think and make decisions.
 
@@ -24,15 +52,16 @@ This helps us understand how you think and make decisions.
 
 ## 💾 Local Persistence Rationale
 
-Explain which local storage method you used (e.g. AsyncStorage, MMKV, SQLite) and why.  
-Include any trade-offs or reasons behind your choice.
+Used AsyncStorage for local persistence because it is lightweight, simple to integrate with React Native, and suitable for storing small to medium amounts of key-value data.
+
+But Not suitable for very large datasets or complex queries; however, it is sufficient for a task list app.
 
 ---
 
 ## 🧠 Global State (if used)
 
 If you used a global state management solution (e.g. Redux, Zustand), briefly explain:
-
+Not used 
 - Why it was used
 - What value it added over local state
 
@@ -40,17 +69,13 @@ If you used a global state management solution (e.g. Redux, Zustand), briefly ex
 
 ## 💫 Animations (Bonus, if implemented)
 
-If you added animations using `react-native-reanimated`, please describe them here.  
-Let us know what you animated and why you chose to do so.
+Added an animation with a splash screen and didnt added while creating the tasks and all because it might be a  little too much for an app that increases the productivity of a person
 
 ---
 
 ## 🎥 Demo Video
 
-Include a link to a short screen recording (e.g. Loom or MP4) showing the app in use.
-
-> Example:  
-> https://loom.com/share/your-demo-link
+Google Drive Link: https://drive.google.com/drive/folders/1KP8JVDIlM0xudGtdpmY-Ox-tTXcgcUc0?usp=sharing
 
 ---
 
